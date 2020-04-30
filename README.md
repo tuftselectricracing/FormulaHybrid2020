@@ -1,2 +1,2 @@
-# FormulaHybrid2020
-Files and such for Hormula Hybrid 2020
+# Formula Hybrid 2020
+Files and such for Formula Hybrid 2020
