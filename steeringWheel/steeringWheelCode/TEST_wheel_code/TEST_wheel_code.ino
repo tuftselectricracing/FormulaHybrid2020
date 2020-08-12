@@ -81,6 +81,11 @@ void setup() {
   }
   display.clearDisplay();
   Serial.println("Finished waiting. Display should be cleared");
+
+  display.setTextSize(1);
+  display.setTextWrap(false);
+  display.setTextColor(WHITE);
+  display.setCursor(0,0);
 }
 
 void loop() {
@@ -147,8 +152,6 @@ void clearButtsAndSwitches() {
 // RETURNS: Nothing
 void updateDisplay() {
 
-  display.clearDisplay();
-
   if (isLeftBlackPress) {
     display.println("Left Black Button Pressed!");
   }
@@ -180,4 +183,6 @@ void updateDisplay() {
   if (isReversePress) {
     display.println("Reverse Switch On!");
   }
+
+  display.display();
 }

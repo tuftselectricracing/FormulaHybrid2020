@@ -16,7 +16,7 @@
 
 // Timing constants
 #define TIME_LOGO_SHOWN 2000		// [ms], time the logo is displayed
-#define TIME_DELAY 5				// [ms], time to wait in timing loops
+#define TIME_DELAY 10				// [ms], time to wait in timing loops
 
 // Direction character constants
 #define dir_char_wid 5
