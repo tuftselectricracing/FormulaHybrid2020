@@ -63,14 +63,14 @@ void setup() {
   pinMode(FORWARD,      INPUT);
   pinMode(REVERSE,      INPUT);
 
-  attachInterrupt(digitalPinToInterrupt(LEFT_BLACK),   leftBlackISR,   RISING);
-  attachInterrupt(digitalPinToInterrupt(BLUE),         blueISR,        RISING);
-  attachInterrupt(digitalPinToInterrupt(GREEN),        greenISR,       RISING);
-  attachInterrupt(digitalPinToInterrupt(RED),          redISR,         RISING);
-  attachInterrupt(digitalPinToInterrupt(RIGHT_BLACK),  rightBlackISR,  RISING);
-  attachInterrupt(digitalPinToInterrupt(RIGHT_SWITCH), rightSwitchISR, RISING);
-  attachInterrupt(digitalPinToInterrupt(FORWARD),      forwardISR,     RISING);
-  attachInterrupt(digitalPinToInterrupt(REVERSE),      reverseISR,     RISING);
+  attachInterrupt(digitalPinToInterrupt(LEFT_BLACK),   leftBlackISR,   CHANGE);
+  attachInterrupt(digitalPinToInterrupt(BLUE),         blueISR,        CHANGE);
+  attachInterrupt(digitalPinToInterrupt(GREEN),        greenISR,       CHANGE);
+  attachInterrupt(digitalPinToInterrupt(RED),          redISR,         CHANGE);
+  attachInterrupt(digitalPinToInterrupt(RIGHT_BLACK),  rightBlackISR,  CHANGE);
+  attachInterrupt(digitalPinToInterrupt(RIGHT_SWITCH), rightSwitchISR, CHANGE);
+  attachInterrupt(digitalPinToInterrupt(FORWARD),      forwardISR,     CHANGE);
+  attachInterrupt(digitalPinToInterrupt(REVERSE),      reverseISR,     CHANGE);
 
   // Keep the logo up while everything is being setup and for a set time
   unsigned long currTime = millis();
@@ -92,7 +92,6 @@ void loop() {
 
   // Main loop goes here :)
   updateDisplay();
-  clearButtsAndSwitches();
   delay(TIME_DELAY);
 }
 
@@ -100,35 +99,35 @@ void loop() {
 // (Even though the functions may seem identical, no parameters can be passed
 // to ISRs, so each button has a custom ISR)
 void leftBlackISR() {
-  isLeftBlackPress = true;
+  isLeftBlackPress = digitalRead(LEFT_BLACK);
 }
 
 void blueISR() {
-  isBluePress = true;
+  isBluePress = digitalRead(BLUE);
 }
 
 void greenISR() {
-  isGreenPress = true;
+  isGreenPress = digitalRead(GREEN);
 }
 
 void redISR() {
-  isRedPress = true;
+  isRedPress = digitalRead(RED);
 }
 
 void rightBlackISR() {
-  isRightBlackPress = true;
+  isRightBlackPress = digitalRead(RIGHT_BLACK);
 }
 
 void rightSwitchISR() {
-  isRightSwitchPress = true;
+  isRightSwitchPress = digitalRead(RIGHT_SWITCH);
 }
 
 void forwardISR() {
-  isForawrdPress = true;
+  isForawrdPress = digitalRead(FORWARD);
 }
 
 void reverseISR() {
-  isReversePress = true;
+  isReversePress = digitalRead(REVERSE);
 }
 
 // clearButtsAndSwitches()
@@ -151,6 +150,9 @@ void clearButtsAndSwitches() {
 // INPUTS: None
 // RETURNS: Nothing
 void updateDisplay() {
+
+  display.clearDisplay();
+  display.setCursor(0,0);
 
   if (isLeftBlackPress) {
     display.println("Left Black Button Pressed!");

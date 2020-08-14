@@ -13,6 +13,7 @@
 #define CONSTANTS_H
 
 #define MAX_PAGE 2
+#define COUNT_CLEAR 20				// number of loop iterations before resetting all button pressed vars
 
 // Timing constants
 #define TIME_LOGO_SHOWN 2000		// [ms], time the logo is displayed
