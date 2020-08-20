@@ -8,7 +8,7 @@
 	schematic for the board.
 
 	By: 	Martin Majkut
-				Tufts Electric Racing
+			Tufts Electric Racing
 	Date: Aug. 3, 2020
 */
 

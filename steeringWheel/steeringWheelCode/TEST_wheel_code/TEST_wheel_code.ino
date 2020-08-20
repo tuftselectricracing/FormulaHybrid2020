@@ -28,8 +28,15 @@
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1325.h>
 
+#include <Adafruit_Sensor.h>
+#include <Adafruit_BNO055.h>
+#include <utility/imumaths.h>
+
 // Global variables
 Adafruit_SSD1325 display(OLED_DIN, OLED_SCLK, OLED_DC, OLED_RST, OLED_CS);
+
+Adafruit_BNO055 posSenor = Adafruit_BNO055(55);
+sensors_event_t orientData;
 
 volatile bool isLeftBlackPress   = false;
 volatile bool isBluePress        = false;
@@ -43,6 +50,7 @@ volatile bool isReversePress     = false;
 // Funciton definitions
 void setup() {
 
+  // Initialize serial communication
   Serial.begin(115200);
 
   // Initialize display
@@ -63,6 +71,7 @@ void setup() {
   pinMode(FORWARD,      INPUT);
   pinMode(REVERSE,      INPUT);
 
+  // Attach interrupts to I/O pins
   attachInterrupt(digitalPinToInterrupt(LEFT_BLACK),   leftBlackISR,   CHANGE);
   attachInterrupt(digitalPinToInterrupt(BLUE),         blueISR,        CHANGE);
   attachInterrupt(digitalPinToInterrupt(GREEN),        greenISR,       CHANGE);
@@ -71,6 +80,12 @@ void setup() {
   attachInterrupt(digitalPinToInterrupt(RIGHT_SWITCH), rightSwitchISR, CHANGE);
   attachInterrupt(digitalPinToInterrupt(FORWARD),      forwardISR,     CHANGE);
   attachInterrupt(digitalPinToInterrupt(REVERSE),      reverseISR,     CHANGE);
+
+  // Initialize orientation sensor
+  if(!posSenor.begin()){
+    Serial.println("No BNO055 detected...");
+    while(1);
+  }
 
   // Keep the logo up while everything is being setup and for a set time
   unsigned long currTime = millis();
@@ -91,6 +106,7 @@ void setup() {
 void loop() {
 
   // Main loop goes here :)
+  readPosSensor();
   updateDisplay();
   delay(TIME_DELAY);
 }
@@ -131,18 +147,29 @@ void reverseISR() {
 }
 
 // clearButtsAndSwitches()
-// Function to clear button and switch states
+// Function to clear button and switch states (commenting in case the function comes
+// in handy in the future)
 // INPUTS: None
 // RETURNS: Nothing
-void clearButtsAndSwitches() {
-  isLeftBlackPress   = false;
-  isBluePress        = false;
-  isGreenPress       = false;
-  isRedPress         = false;
-  isRightBlackPress  = false;
-  isRightSwitchPress = false;
-  isForawrdPress     = false;
-  isReversePress     = false;
+// void clearButtsAndSwitches() {
+//   isLeftBlackPress   = false;
+//   isBluePress        = false;
+//   isGreenPress       = false;
+//   isRedPress         = false;
+//   isRightBlackPress  = false;
+//   isRightSwitchPress = false;
+//   isForawrdPress     = false;
+//   isReversePress     = false;
+// }
+
+// readPosSensor()
+// Function to read the absolute position sensor and update corresponding vars
+// (currently left as a wrapper function in case math is needed for later
+// for calculating angles)
+// INPUTS: None
+// RETURNS: Nothing
+void readPosSensor() {
+  posSenor.getEvent(&orientData);
 }
 
 // updateDisplay()
@@ -153,6 +180,14 @@ void updateDisplay() {
 
   display.clearDisplay();
   display.setCursor(0,0);
+
+  display.print("X: ");
+  display.println(orientData.orientation.x, 1);
+  display.print("Y: ");
+  display.println(orientData.orientation.y, 1);
+  display.print("Z: ");
+  display.println(orientData.orientation.z, 1);
+
 
   if (isLeftBlackPress) {
     display.println("Left Black Button Pressed!");
