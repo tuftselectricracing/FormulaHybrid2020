@@ -7,8 +7,8 @@
 	as quickly as possible. The names used are the same names in the 
 	schematic for the board.
 
-	By: 	Martin Majkut
-			Tufts Electric Racing
+	By:   Martin Majkut
+			  Tufts Electric Racing
 	Date: Aug. 3, 2020
 */
 
@@ -37,8 +37,10 @@
 
 // Pins for communicating to shift registers thus turning on LEDs
 // (link to shift register: https://www.ti.com/store/ti/en/p/product/?p=SN74HC595N)
-#define SHIFT_REG_LATCH 15
-#define SHIFT_REG_SCLK 16
+// NOTE: SCLK and LATCH pins are reversed in schematic (Jan. 2020 Board); will
+//       need to be updated in future iterations of board
+#define SHIFT_REG_LATCH 16
+#define SHIFT_REG_SCLK 15
 #define SHIFT_REG_SDA 17
 
 // Pins for absolute position sensor (link: https://www.adafruit.com/product/2472)

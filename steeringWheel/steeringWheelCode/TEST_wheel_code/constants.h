@@ -4,8 +4,8 @@
 	This is the supplimentary header file to wheel_code.ino file. It defines
 	all the constants used in the code.
 
-	By: 	Martin Majkut
-				Tufts Electric Racing
+	By:   Martin Majkut
+	      Tufts Electric Racing
 	Date: Aug. 3, 2020
 */
 
@@ -13,11 +13,11 @@
 #define CONSTANTS_H
 
 #define MAX_PAGE 2
-#define COUNT_CLEAR 20				// number of loop iterations before resetting all button pressed vars
 
 // Timing constants
-#define TIME_LOGO_SHOWN 2000		// [ms], time the logo is displayed
-#define TIME_DELAY 10				// [ms], time to wait in timing loops
+#define TIME_LOGO_SHOWN 2000  // [ms], time the logo is displayed
+#define TIME_LED_FLASH 100    // [ms], time for LED flashing
+#define TIME_DELAY 10				  // [ms], time to wait in timing loops
 
 // Direction character constants
 #define dir_char_wid 5

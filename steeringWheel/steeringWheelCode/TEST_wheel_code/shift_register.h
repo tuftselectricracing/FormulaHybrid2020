@@ -1,85 +1,77 @@
+/*
+  shift_register.h
+
+  This is the supplimentary header file to wheel_code.ino file. It defines
+  functions used to update the LEDs on either side of the display.
+
+  By:   Martin Majkut
+        Tufts Electric Racing
+  Date: Aug. 3, 2020
+*/
+
 #ifndef SHIFT_REGISTER_H
 #define SHIFT_REGISTER_H
 
-//shift in bit to register
-void shift_in(uint8_t bit_in, uint8_t side){
+// setLEDs(byte dataLeft, byte dataRight)
+// The process for setting the LEDs is as follows: latch pin low to tell the 
+// shift register that data is coming in, send data for left LEDs, send data 
+// for right LEDs right after, latch pin high to tell the shift register to 
+// update LEDs
+// INPUTS: byte dataLeft, dataRight; each bit of the byte coresponds to LED
+//         position and a 1 turns it on, 0 turns it off
+// RETURNS: Nothing
+void setLEDs(byte dataLeft, byte dataRight){
 
-  if(side == right){
-  
-    digitalWrite(CLK_1, LOW);
-    if(bit_in == 1){
-      digitalWrite(SERIAL_1, HIGH);
-    }
-    else{
-      digitalWrite(SERIAL_1, LOW);
-    }
-    digitalWrite(CLK_1, HIGH);
-  }
-  else{
-    digitalWrite(CLK_2, LOW);
-    if(bit_in == 1){
-      digitalWrite(SERIAL_2, HIGH);
-    }
-    else{
-      digitalWrite(SERIAL_2, LOW);
-    }
-    digitalWrite(CLK_2, HIGH);
-  }
+  digitalWrite(SHIFT_REG_LATCH, LOW);
+
+  shiftOut(SHIFT_REG_SDA, SHIFT_REG_SCLK, MSBFIRST, dataLeft);
+  shiftOut(SHIFT_REG_SDA, SHIFT_REG_SCLK, MSBFIRST, dataRight);
+
+  digitalWrite(SHIFT_REG_LATCH, HIGH);
 }
 
-//sets all LEDs to high on a side
-void set_all(uint8_t side, uint8_t t_delay){
+// setAllLEDsOn()
+// Function to turn all LEDs on
+// INPUTS: None
+// RETURNS: Nothing
+void setAllLEDsOn(){
+
+  setLEDs(255, 255);
+}
+
+// setAllLEDsOff()
+// Function to turn all LEDs off
+// INPUTS: None
+// RETURNS: Nothing
+void setAllLEDsOff(){
   
-  for(uint8_t i = 0; i<9; i++){
-    shift_in(1, side);
+  setLEDs(0, 0);
+}
+
+// setLEDsWait()
+// Function to set LEDs in 'waiting' configuration until connection 
+// between motherboard and steering wheel is established
+// INPUTS: None
+// RETURNS: Nothing
+void setLEDsWait(){
+
+  setLEDs(37, 37);    // int 37 corresponds to binary '00100101'
+}
+
+// testLEDs()
+// Function to flash LEDs during startup to 'test' that they work
+// INPUTS: None
+// RETURNS: Nothing
+void testLEDs(){
+
+  int dataLED = 0;
+
+  for (int flashCount = 0; flashCount < 9; flashCount++) {
     
-    if(t_delay != 0){
-      delay(t_delay);
-    }
-  
+    dataLED = 1 << flashCount;
+    setLEDs(dataLED, dataLED);
+    delay(TIME_LED_FLASH);
   }
 }
-//shifts in 'n' 0s to register, n = num_leds
-void clear_leds(uint8_t num_leds, uint8_t side, uint8_t t_delay){
-  
-  for(uint8_t i = 0; i<num_leds+1; i++){
-    shift_in(0, side);
-    if(t_delay != 0){
-      delay(t_delay);
-    }
-  }
-}
-//shifts in stream of 1's, then stream of 0's
-void test_leds(uint8_t side){
- 
-  set_all(side, 20);
-  clear_leds(8, side, 20);
-}
-
-void clear_reg(uint8_t side){
-
-  if(side == right){
-    digitalWrite(CLR_1, LOW);
-  }
-  else{
-    digitalWrite(CLR_2, LOW);
-  }
-}
-
-void set_leds(uint8_t level, uint8_t side){
-
-//  uint8_t num_cleared = 0;
-        //These are currently unused - Issue?
-//  num_cleared = 8 - level;
-
-  Serial.print("Setting LEDS, level: "); /* FIGURE THIS OUT */
-  Serial.println(level, DEC);
-  
-  clear_reg(side);
-  set_all(side, 0);
-  clear_leds(8, side, 0);
-  
-}
-
 
 #endif 

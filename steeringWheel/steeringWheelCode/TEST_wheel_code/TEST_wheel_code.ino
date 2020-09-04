@@ -21,6 +21,7 @@
 #include "logo.h"
 #include "pins.h"
 #include "constants.h"
+#include "shift_register.h"
 
 #include <SPI.h>
 #include <Wire.h>
@@ -81,8 +82,18 @@ void setup() {
   attachInterrupt(digitalPinToInterrupt(FORWARD),      forwardISR,     CHANGE);
   attachInterrupt(digitalPinToInterrupt(REVERSE),      reverseISR,     CHANGE);
 
+  // Set shift register pins and turn off LEDs
+  pinMode(SHIFT_REG_LATCH, OUTPUT);
+  pinMode(SHIFT_REG_SCLK,  OUTPUT);
+  pinMode(SHIFT_REG_SDA,   OUTPUT);
+
+  digitalWrite(SHIFT_REG_LATCH, LOW);
+  digitalWrite(SHIFT_REG_SCLK,  LOW);
+  digitalWrite(SHIFT_REG_SDA,   LOW);
+  setAllLEDsOff();
+
   // Initialize orientation sensor
-  if(!posSenor.begin()){
+  if (!posSenor.begin()) {
     Serial.println("No BNO055 detected...");
     while(1);
   }
@@ -90,10 +101,16 @@ void setup() {
   // Keep the logo up while everything is being setup and for a set time
   unsigned long currTime = millis();
   Serial.println("Entering while loop...");
-  while((currTime - timeDisplayed) < TIME_LOGO_SHOWN){
+  while ((currTime - timeDisplayed) < TIME_LOGO_SHOWN) {
     currTime = millis();
     delay(TIME_DELAY);
   }
+
+  // Test LEDs and set them to 'waiting' configuration
+  testLEDs();
+  setLEDsWait();
+
+  // Clear display before going into main loop
   display.clearDisplay();
   Serial.println("Finished waiting. Display should be cleared");
 
