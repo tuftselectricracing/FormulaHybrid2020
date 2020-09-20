@@ -33,11 +33,21 @@
 #include <Adafruit_BNO055.h>
 #include <utility/imumaths.h>
 
+#include <circular_buffer.h>
+#include <FlexCAN_T4.h>
+#include <imxrt_flexcan.h>
+#include <kinetis_flexcan.h>
+// NOTE: Documentation for library can be found at: 
+//       https://github.com/tonton81/FlexCAN_T4
+
 // Global variables
 Adafruit_SSD1325 display(OLED_DIN, OLED_SCLK, OLED_DC, OLED_RST, OLED_CS);
 
 Adafruit_BNO055 posSenor = Adafruit_BNO055(55);
 sensors_event_t orientData;
+
+FlexCAN_T4<CAN1, RX_SIZE_256, TX_SIZE_16> steerCAN;
+CAN_message_t currMsg;
 
 volatile bool isLeftBlackPress   = false;
 volatile bool isBluePress        = false;
@@ -47,12 +57,18 @@ volatile bool isRightBlackPress  = false;
 volatile bool isRightSwitchPress = false;
 volatile bool isForawrdPress     = false;
 volatile bool isReversePress     = false;
+volatile bool newCANmsg          = false;
+
+volatile unsigned long lastCANtime = 0;
 
 // Funciton definitions
 void setup() {
 
   // Initialize serial communication
   Serial.begin(115200);
+
+  steerCAN.begin();
+  steerCAN.setBaudRate(250000);
 
   // Initialize display
   display.begin();
@@ -124,6 +140,7 @@ void loop() {
 
   // Main loop goes here :)
   readPosSensor();
+  readCAN();
   updateDisplay();
   delay(TIME_DELAY);
 }
@@ -189,6 +206,28 @@ void readPosSensor() {
   posSenor.getEvent(&orientData);
 }
 
+// readCAN()
+// Function to read from the CAN Bus line
+// INPUTS: None
+// RETURNS: Nothing
+void readCAN() {
+
+  unsigned long currTime = millis();
+    
+  CAN_message_t msg;
+  if (steerCAN.read(msg)) {
+    
+    currMsg     = msg;
+    newCANmsg   = true;
+    lastCANtime = currTime;
+
+  } else if (currTime - lastCANtime < TIME_CAN_MSG_TO) {
+    newCANmsg = true;
+  } else {
+    newCANmsg = false;
+  }
+}
+
 // updateDisplay()
 // Function to determine what to display
 // INPUTS: None
@@ -205,6 +244,15 @@ void updateDisplay() {
   display.print("Z: ");
   display.println(orientData.orientation.z, 1);
 
+  if (newCANmsg) {
+    display.print("TS: "); display.print(currMsg.timestamp);
+    display.print(" MSG ID: "); display.println(currMsg.id, HEX);
+    display.print("Buffer: ");
+    for (int iBuff = 0; iBuff < currMsg.len; iBuff++) {
+      display.print(currMsg.buf[iBuff], HEX);
+    }
+    display.println();
+  }
 
   if (isLeftBlackPress) {
     display.println("Left Black Button Pressed!");

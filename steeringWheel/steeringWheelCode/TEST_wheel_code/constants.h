@@ -17,6 +17,7 @@
 // Timing constants
 #define TIME_LOGO_SHOWN 2000  // [ms], time the logo is displayed
 #define TIME_LED_FLASH 100    // [ms], time for LED flashing
+#define TIME_CAN_MSG_TO 250   // [ms], timeout for displaying last received CAN message
 #define TIME_DELAY 10				  // [ms], time to wait in timing loops
 
 // Direction character constants
