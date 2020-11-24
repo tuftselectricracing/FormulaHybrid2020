@@ -1,4 +1,5 @@
 EESchema Schematic File Version 4
+LIBS:MAIN_newBreakoutBoard-cache
 EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
@@ -23,17 +24,6 @@ F 2 "Connector_JST:JST_PHD_S12B-PHDSS_2x06_P2.00mm_Horizontal" H 1600 4200 50  0
 F 3 "~" H 1600 4200 50  0001 C CNN
 	1    1600 4200
 	0    -1   -1   0   
-$EndComp
-$Comp
-L Connector_Generic:Conn_01x14 J3
-U 1 1 5FA8EFE0
-P 1400 6150
-F 0 "J3" H 1318 6967 50  0000 C CNN
-F 1 "Conn_01x14" H 1318 6876 50  0000 C CNN
-F 2 "TE-Connectivity_TE_776266-1:TE_776266-1" H 1400 6150 50  0001 C CNN
-F 3 "~" H 1400 6150 50  0001 C CNN
-	1    1400 6150
-	-1   0    0    -1  
 $EndComp
 Text GLabel 1400 3800 1    50   Input ~ 0
 12V
@@ -174,8 +164,6 @@ Text GLabel 1700 6550 2    50   Input ~ 0
 IMD_LED_Input
 Text GLabel 1700 6650 2    50   Input ~ 0
 CAN_High
-NoConn ~ 1600 6750
-NoConn ~ 1600 6850
 Wire Wire Line
 	1700 5650 1600 5650
 Wire Wire Line
@@ -246,4 +234,23 @@ Wire Wire Line
 	2300 6150 2300 6200
 Text Notes 2150 2650 0    50   ~ 0
 NOTE: The corresponding symbol has a vertical orientation. \nWhile vertical pins can be used, the board was designed with\nintentions of using horizontal pins.
+$Comp
+L Connector_Generic:Conn_01x14 J3
+U 1 1 5FA8EFE0
+P 1400 6150
+F 0 "J3" H 1318 6967 50  0000 C CNN
+F 1 "Conn_01x14" H 1318 6876 50  0000 C CNN
+F 2 "TE-Connectivity_TE_776266-1:TE_776266-1" H 1400 6150 50  0001 C CNN
+F 3 "~" H 1400 6150 50  0001 C CNN
+	1    1400 6150
+	-1   0    0    -1  
+$EndComp
+Text GLabel 1700 6750 2    50   Input ~ 0
+CAN_Low
+Text GLabel 1700 6850 2    50   Input ~ 0
+CAN_High
+Wire Wire Line
+	1600 6750 1700 6750
+Wire Wire Line
+	1600 6850 1700 6850
 $EndSCHEMATC

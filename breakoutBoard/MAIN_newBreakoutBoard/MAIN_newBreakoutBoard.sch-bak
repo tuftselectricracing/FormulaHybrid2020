@@ -97,7 +97,7 @@ U 1 1 5FAA108C
 P 1600 2300
 F 0 "J1" V 1696 1912 50  0000 R CNN
 F 1 "Conn_02x06_Test_Pins" V 1605 1912 50  0000 R CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_2x06_P2.54mm_Horizontal" H 1600 2300 50  0001 C CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_2x06_P2.54mm_Vertical" H 1600 2300 50  0001 C CNN
 F 3 "~" H 1600 2300 50  0001 C CNN
 	1    1600 2300
 	0    -1   -1   0   
@@ -244,4 +244,6 @@ Wire Wire Line
 	2300 5750 2300 5950
 Wire Wire Line
 	2300 6150 2300 6200
+Text Notes 2150 2650 0    50   ~ 0
+NOTE: The corresponding symbol has a vertical orientation. \nWhile vertical pins can be used, the board was designed with\nintentions of using horizontal pins.
 $EndSCHEMATC
