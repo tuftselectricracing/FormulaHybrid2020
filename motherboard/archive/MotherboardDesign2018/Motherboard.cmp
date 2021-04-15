@@ -1,0 +1,515 @@
+Cmp-Mod V01 Created by PcbNew   date = Mon 22 Jan 2018 09:04:17 PM EST
+
+BeginCmp
+TimeStamp = 5A1964FD
+Path = /5A0238B9/5A11510E
+Reference = U4;
+ValeurCmp = ATMEGA328P-PU;
+IdModule  = Housings_DIP:DIP-28_W8.89mm_SMDSocket_LongPads;
+EndCmp
+
+BeginCmp
+TimeStamp = 5A19645E
+Path = /5A0440AF
+Reference = F6;
+ValeurCmp = RADIATOR_FAN_FUSE;
+IdModule  = Fuse_Holders_and_Fuses:BladeFuse-Mini_Keystone_3568;
+EndCmp
+
+BeginCmp
+TimeStamp = 5A195602
+Path = /5A128E72
+Reference = J5;
+ValeurCmp = Conn_01x14_Male;
+IdModule  = TuftsRacing2018:AMP14;
+EndCmp
+
+BeginCmp
+TimeStamp = 5A195614
+Path = /5A021EBA/5A0234D4
+Reference = K2;
+ValeurCmp = IMD_LATCH;
+IdModule  = Relays_THT:Relay_SPDT_OMRON-G5LE-1;
+EndCmp
+
+BeginCmp
+TimeStamp = 5A19560B
+Path = /5A021EBA/5A023295
+Reference = K1;
+ValeurCmp = IMD_RELAY;
+IdModule  = Relays_THT:Relay_SPDT_OMRON-G5LE-1;
+EndCmp
+
+BeginCmp
+TimeStamp = 5A19561D
+Path = /5A021EBA/5A023534
+Reference = K3;
+ValeurCmp = BMS_RELAY;
+IdModule  = Relays_THT:Relay_SPDT_OMRON-G5LE-1;
+EndCmp
+
+BeginCmp
+TimeStamp = 5A19642E
+Path = /5A021EBA/5A02290F
+Reference = D4;
+ValeurCmp = BMS_FLYBACK;
+IdModule  = Diodes_SMD:D_SOT-23_ANK;
+EndCmp
+
+BeginCmp
+TimeStamp = 5A196436
+Path = /5A068ED5
+Reference = F1;
+ValeurCmp = 5V_FUSE;
+IdModule  = Fuse_Holders_and_Fuses:BladeFuse-Mini_Keystone_3568;
+EndCmp
+
+BeginCmp
+TimeStamp = 5A19643E
+Path = /5A030C01
+Reference = F2;
+ValeurCmp = BMS_FUSE;
+IdModule  = Fuse_Holders_and_Fuses:BladeFuse-Mini_Keystone_3568;
+EndCmp
+
+BeginCmp
+TimeStamp = 5A196446
+Path = /5A030AD3
+Reference = F3;
+ValeurCmp = RTDS_FUSE;
+IdModule  = Fuse_Holders_and_Fuses:BladeFuse-Mini_Keystone_3568;
+EndCmp
+
+BeginCmp
+TimeStamp = 5A19644E
+Path = /5A030B76
+Reference = F4;
+ValeurCmp = BATTERY_FAN_FUSE;
+IdModule  = Fuse_Holders_and_Fuses:BladeFuse-Mini_Keystone_3568;
+EndCmp
+
+BeginCmp
+TimeStamp = 5A196456
+Path = /5A03A6DF
+Reference = F5;
+ValeurCmp = BRK_LIGHT_FUSE;
+IdModule  = Fuse_Holders_and_Fuses:BladeFuse-Mini_Keystone_3568;
+EndCmp
+
+BeginCmp
+TimeStamp = 5A196466
+Path = /5A03AB8E
+Reference = F7;
+ValeurCmp = PUMP_FUSE;
+IdModule  = Fuse_Holders_and_Fuses:BladeFuse-Mini_Keystone_3568;
+EndCmp
+
+BeginCmp
+TimeStamp = 5A19646E
+Path = /5A06F0A8
+Reference = F8;
+ValeurCmp = LAP_TIMER_FUSE;
+IdModule  = Fuse_Holders_and_Fuses:BladeFuse-Mini_Keystone_3568;
+EndCmp
+
+BeginCmp
+TimeStamp = 5A196476
+Path = /5A03B841
+Reference = F9;
+ValeurCmp = SEVCON_FUSE;
+IdModule  = Fuse_Holders_and_Fuses:BladeFuse-Mini_Keystone_3568;
+EndCmp
+
+BeginCmp
+TimeStamp = 5A19647E
+Path = /5A19A152
+Reference = F10;
+ValeurCmp = WHEEL_FUSE;
+IdModule  = Fuse_Holders_and_Fuses:BladeFuse-Mini_Keystone_3568;
+EndCmp
+
+BeginCmp
+TimeStamp = 5A196486
+Path = /5A03B4F3
+Reference = F11;
+ValeurCmp = DAQ_FUSE;
+IdModule  = Fuse_Holders_and_Fuses:BladeFuse-Mini_Keystone_3568;
+EndCmp
+
+BeginCmp
+TimeStamp = 5A19648E
+Path = /5A03AF59
+Reference = F12;
+ValeurCmp = IMD_FUSE;
+IdModule  = Fuse_Holders_and_Fuses:BladeFuse-Mini_Keystone_3568;
+EndCmp
+
+BeginCmp
+TimeStamp = 5A196496
+Path = /5A021EBA/5A122E62
+Reference = F13;
+ValeurCmp = SD_FUSE;
+IdModule  = Fuse_Holders_and_Fuses:BladeFuse-Mini_Keystone_3568;
+EndCmp
+
+BeginCmp
+TimeStamp = 5A1964A0
+Path = /5A0238B9/5A027A13
+Reference = J6;
+ValeurCmp = FTDI;
+IdModule  = Pin_Headers:Pin_Header_Straight_1x06_Pitch2.54mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 5A1964AA
+Path = /5A0238B9/5A026A78
+Reference = J7;
+ValeurCmp = ICSP;
+IdModule  = Pin_Headers:Pin_Header_Straight_2x03_Pitch2.54mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 5A1964B2
+Path = /5A0238B9/5A02695A
+Reference = SW1;
+ValeurCmp = SW_Push;
+IdModule  = Buttons_Switches_SMD:SW_SPST_PTS645;
+EndCmp
+
+BeginCmp
+TimeStamp = 5A1964B9
+Path = /5A02D6F3
+Reference = U1;
+ValeurCmp = LM7805_TO220;
+IdModule  = Power_Integrations:TO-220;
+EndCmp
+
+BeginCmp
+TimeStamp = 5A1964CB
+Path = /5A121622
+Reference = U2;
+ValeurCmp = 74HC00;
+IdModule  = Housings_DIP:DIP-14_W8.89mm_SMDSocket_LongPads;
+EndCmp
+
+BeginCmp
+TimeStamp = 5A196511
+Path = /5A0238B9/5A0250E7
+Reference = U5;
+ValeurCmp = CD40109;
+IdModule  = Housings_DIP:DIP-16_W8.89mm_SMDSocket_LongPads;
+EndCmp
+
+BeginCmp
+TimeStamp = 5A196523
+Path = /5A0342F0/5A122AA0
+Reference = U6;
+ValeurCmp = 74HC14;
+IdModule  = Housings_DIP:DIP-14_W8.89mm_SMDSocket_LongPads;
+EndCmp
+
+BeginCmp
+TimeStamp = 5A1955C6
+Path = /5A021EBA/5A022316
+Reference = D2;
+ValeurCmp = IMD_FLYBACK;
+IdModule  = Diodes_SMD:D_SOT-23_ANK;
+EndCmp
+
+BeginCmp
+TimeStamp = 5A456761
+Path = /5A02EED7
+Reference = Q1;
+ValeurCmp = Q_NMOS_DGS;
+IdModule  = TO_SOT_Packages_SMD:TO-263-2;
+EndCmp
+
+BeginCmp
+TimeStamp = 5A45676C
+Path = /5A061CA6
+Reference = Q2;
+ValeurCmp = Q_NMOS_DGS;
+IdModule  = TO_SOT_Packages_SMD:TO-263-2;
+EndCmp
+
+BeginCmp
+TimeStamp = 5A456777
+Path = /5A021EBA/5A022451
+Reference = Q3;
+ValeurCmp = Q_NMOS_DGS;
+IdModule  = TO_SOT_Packages_SMD:TO-263-2;
+EndCmp
+
+BeginCmp
+TimeStamp = 5A456782
+Path = /5A021EBA/5A0225B4
+Reference = Q4;
+ValeurCmp = Q_NMOS_DGS;
+IdModule  = TO_SOT_Packages_SMD:TO-263-2;
+EndCmp
+
+BeginCmp
+TimeStamp = 5A456A4A
+Path = /5A021EBA/5A09EA5C
+Reference = D1;
+ValeurCmp = IMD_OK;
+IdModule  = LEDs:LED_0603_HandSoldering;
+EndCmp
+
+BeginCmp
+TimeStamp = 5A456A4F
+Path = /5A021EBA/5A09ECFB
+Reference = D3;
+ValeurCmp = BMS_OK;
+IdModule  = LEDs:LED_0603_HandSoldering;
+EndCmp
+
+BeginCmp
+TimeStamp = 5A46955C
+Path = /5A0342F0/5A03464B
+Reference = C7;
+ValeurCmp = CP;
+IdModule  = Capacitors_THT:CP_Radial_D8.0mm_P5.00mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 5A469561
+Path = /5A0342F0/5A034698
+Reference = C8;
+ValeurCmp = CP;
+IdModule  = Capacitors_THT:CP_Radial_D8.0mm_P5.00mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 5A469AA8
+Path = /5A18A953
+Reference = J1;
+ValeurCmp = Conn_01x16_Male;
+IdModule  = Connectors_Molex:Molex_MiniFit-JR-5556-16A_2x08x4.20mm_Straight;
+EndCmp
+
+BeginCmp
+TimeStamp = 5A469AB0
+Path = /5A18AB91
+Reference = J2;
+ValeurCmp = Conn_01x04_Male;
+IdModule  = Connectors_Molex:Molex_MiniFit-JR-5556-04A_2x02x4.20mm_Straight;
+EndCmp
+
+BeginCmp
+TimeStamp = 5A469ABA
+Path = /5A49ACBF
+Reference = J8;
+ValeurCmp = Conn_01x06_Male;
+IdModule  = Connectors_Molex:Molex_MiniFit-JR-5556-06A_2x03x4.20mm_Straight;
+EndCmp
+
+BeginCmp
+TimeStamp = 5A669516
+Path = /5A6C01C2
+Reference = C9;
+ValeurCmp = C;
+IdModule  = Resistors_SMD:R_0805_HandSoldering;
+EndCmp
+
+BeginCmp
+TimeStamp = 5A66951C
+Path = /5A6CD1DE
+Reference = C10;
+ValeurCmp = C;
+IdModule  = Resistors_SMD:R_0805_HandSoldering;
+EndCmp
+
+BeginCmp
+TimeStamp = 5A669522
+Path = /5A6C005B
+Reference = C11;
+ValeurCmp = C;
+IdModule  = Resistors_SMD:R_0805_HandSoldering;
+EndCmp
+
+BeginCmp
+TimeStamp = 5A669528
+Path = /5A6CD2E5
+Reference = C12;
+ValeurCmp = C;
+IdModule  = Resistors_SMD:R_0805_HandSoldering;
+EndCmp
+
+BeginCmp
+TimeStamp = 5A66952D
+Path = /5A6CDDBF
+Reference = J9;
+ValeurCmp = Conn_01x01;
+IdModule  = TuftsRacing2018:MountingPadM3;
+EndCmp
+
+BeginCmp
+TimeStamp = 5A669532
+Path = /5A6CDFDD
+Reference = J10;
+ValeurCmp = Conn_01x01;
+IdModule  = TuftsRacing2018:MountingPadM3;
+EndCmp
+
+BeginCmp
+TimeStamp = 5A669537
+Path = /5A6CE0EF
+Reference = J11;
+ValeurCmp = Conn_01x01;
+IdModule  = TuftsRacing2018:MountingPadM3;
+EndCmp
+
+BeginCmp
+TimeStamp = 5A66953C
+Path = /5A6CE1FC
+Reference = J12;
+ValeurCmp = Conn_01x01;
+IdModule  = TuftsRacing2018:MountingPadM3;
+EndCmp
+
+BeginCmp
+TimeStamp = 5A66963C
+Path = /5A0238B9/5A023949
+Reference = C1;
+ValeurCmp = 1u;
+IdModule  = Resistors_SMD:R_0805_HandSoldering;
+EndCmp
+
+BeginCmp
+TimeStamp = 5A669641
+Path = /5A0238B9/5A042998
+Reference = C2;
+ValeurCmp = 1u;
+IdModule  = Resistors_SMD:R_0805_HandSoldering;
+EndCmp
+
+BeginCmp
+TimeStamp = 5A669646
+Path = /5A0238B9/5A0239E1
+Reference = C3;
+ValeurCmp = .1u;
+IdModule  = Resistors_SMD:R_0805_HandSoldering;
+EndCmp
+
+BeginCmp
+TimeStamp = 5A66964B
+Path = /5A0238B9/5A042F62
+Reference = C4;
+ValeurCmp = 1u;
+IdModule  = Resistors_SMD:R_0805_HandSoldering;
+EndCmp
+
+BeginCmp
+TimeStamp = 5A669650
+Path = /5A0238B9/5A027EB6
+Reference = C5;
+ValeurCmp = 1u;
+IdModule  = Resistors_SMD:R_0805_HandSoldering;
+EndCmp
+
+BeginCmp
+TimeStamp = 5A669655
+Path = /5A0238B9/5A042F1F
+Reference = C6;
+ValeurCmp = 1u;
+IdModule  = Resistors_SMD:R_0805_HandSoldering;
+EndCmp
+
+BeginCmp
+TimeStamp = 5A66965A
+Path = /5A062DE1
+Reference = R1;
+ValeurCmp = 10k;
+IdModule  = Resistors_SMD:R_0805_HandSoldering;
+EndCmp
+
+BeginCmp
+TimeStamp = 5A66965F
+Path = /5A062E9E
+Reference = R2;
+ValeurCmp = 10k;
+IdModule  = Resistors_SMD:R_0805_HandSoldering;
+EndCmp
+
+BeginCmp
+TimeStamp = 5A669664
+Path = /5A0238B9/5A026097
+Reference = R4;
+ValeurCmp = 10k;
+IdModule  = Resistors_SMD:R_0805_HandSoldering;
+EndCmp
+
+BeginCmp
+TimeStamp = 5A669669
+Path = /5A0238B9/5A026338
+Reference = R5;
+ValeurCmp = 10k;
+IdModule  = Resistors_SMD:R_0805_HandSoldering;
+EndCmp
+
+BeginCmp
+TimeStamp = 5A66966E
+Path = /5A0238B9/5A026788
+Reference = R6;
+ValeurCmp = 10k;
+IdModule  = Resistors_SMD:R_0805_HandSoldering;
+EndCmp
+
+BeginCmp
+TimeStamp = 5A669673
+Path = /5A0342F0/5A0344CB
+Reference = R7;
+ValeurCmp = R;
+IdModule  = Resistors_SMD:R_0805_HandSoldering;
+EndCmp
+
+BeginCmp
+TimeStamp = 5A669678
+Path = /5A0342F0/5A034522
+Reference = R8;
+ValeurCmp = R;
+IdModule  = Resistors_SMD:R_0805_HandSoldering;
+EndCmp
+
+BeginCmp
+TimeStamp = 5A66967D
+Path = /5A021EBA/5A09EADD
+Reference = R9;
+ValeurCmp = R;
+IdModule  = Resistors_SMD:R_0805_HandSoldering;
+EndCmp
+
+BeginCmp
+TimeStamp = 5A669682
+Path = /5A021EBA/5A09ED01
+Reference = R10;
+ValeurCmp = R;
+IdModule  = Resistors_SMD:R_0805_HandSoldering;
+EndCmp
+
+BeginCmp
+TimeStamp = 5A66984F
+Path = /5A0238B9/5A0237EB
+Reference = U3;
+ValeurCmp = CD4050;
+IdModule  = Housings_DIP:DIP-16_W8.89mm_SMDSocket_LongPads;
+EndCmp
+
+BeginCmp
+TimeStamp = 5A1955DA
+Path = /5A128C62
+Reference = J3;
+ValeurCmp = Conn_01x14_Male;
+IdModule  = TuftsRacing2018:AMP14;
+EndCmp
+
+BeginCmp
+TimeStamp = 5A1955EE
+Path = /5A128D99
+Reference = J4;
+ValeurCmp = Conn_01x14_Male;
+IdModule  = TuftsRacing2018:AMP14;
+EndCmp
+
+EndListe
