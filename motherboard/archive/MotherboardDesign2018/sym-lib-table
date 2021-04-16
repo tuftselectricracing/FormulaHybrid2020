@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name CD4050BE)(type Legacy)(uri ${KIPRJMOD}/projectSpecificSymbols/CD4050BE/CD4050BE.lib)(options "")(descr ""))
+  (lib (name CD40109BE)(type Legacy)(uri ${KIPRJMOD}/projectSpecificSymbols/CD40109BE/CD40109BE.lib)(options "")(descr ""))
+)
