@@ -10,7 +10,7 @@ Rev "v1.0"
 Comp "Tufts Electric Racing"
 Comment1 ""
 Comment2 ""
-Comment3 "Date: May 2020"
+Comment3 "Date: May 2021"
 Comment4 "By: Martin Majkut"
 $EndDescr
 $Comp

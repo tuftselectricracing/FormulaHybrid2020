@@ -7,7 +7,7 @@
       "Application": "Pcbnew",
       "Version":     "(5.1.9)-1"
     },
-    "CreationDate":  "2022-01-23T20:12:45-08:00"
+    "CreationDate":  "2022-01-24T01:27:23-08:00"
   },
   "GeneralSpecs":
   {
@@ -15,7 +15,7 @@
     {
       "Name": "MAIN_daq",
       "GUID": "4d41494e-5f64-4617-912e-6b696361645f",
-      "Revision": "rev?"
+      "Revision": "v1.0"
     },
     "Size":
     {
