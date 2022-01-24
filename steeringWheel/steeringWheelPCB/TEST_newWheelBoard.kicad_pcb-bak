@@ -2476,7 +2476,7 @@
     )
   )
 
-  (gr_text "Tufts Electric Racing\nSteering Wheel Board\nBy: Martin Majkut\nDate: Spring 2020" (at 92.5 79) (layer B.SilkS)
+  (gr_text "Tufts Electric Racing\nSteering Wheel Board v1.0\nBy: Martin Majkut\nDate: Spring 2020" (at 92.5 79) (layer B.SilkS)
     (effects (font (size 2.5 2.5) (thickness 0.2)) (justify mirror))
   )
   (gr_text 1 (at 125.476 106.934) (layer F.SilkS)

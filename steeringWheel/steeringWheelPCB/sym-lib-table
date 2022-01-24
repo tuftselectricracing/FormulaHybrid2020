@@ -1,3 +1,5 @@
 (sym_lib_table
   (lib (name TEST_newWheelBoard)(type Legacy)(uri ${KIPRJMOD}/TEST_newWheelBoard.lib)(options "")(descr ""))
+  (lib (name TEST_newWheelBoard-rescue)(type Legacy)(uri ${KIPRJMOD}/TEST_newWheelBoard-rescue.lib)(options "")(descr ""))
+  (lib (name teensy)(type Legacy)(uri C:/Users/martin/Documents/KiCad/teensy_library-master/teensy.lib)(options "")(descr ""))
 )

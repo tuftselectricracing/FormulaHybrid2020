@@ -1,0 +1,4 @@
+(fp_lib_table
+  (lib (name TE-Connectivity_TE_776266-1)(type KiCad)(uri C:/Users/martin/Documents/KiCad/TE-Connectivity_TE_776266-1)(options "")(descr ""))
+  (lib (name teensy)(type KiCad)(uri C:/Users/martin/Documents/KiCad/teensy.pretty-master)(options "")(descr ""))
+)

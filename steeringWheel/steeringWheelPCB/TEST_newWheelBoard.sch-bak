@@ -1,5 +1,4 @@
 EESchema Schematic File Version 4
-LIBS:TEST_newWheelBoard-cache
 EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
@@ -1118,17 +1117,6 @@ Wire Wire Line
 Wire Wire Line
 	3300 3300 3400 3300
 $Comp
-L Device:CP1 C5
-U 1 1 5E21FD9B
-P 6200 6050
-F 0 "C5" H 6315 6096 50  0000 L CNN
-F 1 "100uF" H 6315 6005 50  0000 L CNN
-F 2 "Capacitor_SMD:C_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 6200 6050 50  0001 C CNN
-F 3 "~" H 6200 6050 50  0001 C CNN
-	1    6200 6050
-	1    0    0    -1  
-$EndComp
-$Comp
 L Device:CP1 C3
 U 1 1 5E220610
 P 5200 6050
@@ -1182,8 +1170,6 @@ Wire Wire Line
 Connection ~ 5200 5850
 Wire Wire Line
 	5200 6200 5700 6200
-Wire Wire Line
-	5700 6200 6200 6200
 Wire Wire Line
 	6200 5900 6200 5850
 Connection ~ 6200 5850
@@ -1422,4 +1408,19 @@ Wire Wire Line
 Connection ~ 8250 4750
 Text Notes 8200 5750 0    50   ~ 0
 NOTE: Steering wheel passthrough board \n(by Noel Hwang, Nov 2016 Board) is 1-to-1 \nconnection from 6x2 JST connector to \n14-pin ampseal connector.
+Wire Wire Line
+	5700 6200 6200 6200
+$Comp
+L Device:CP1 C5
+U 1 1 5E21FD9B
+P 6200 6050
+F 0 "C5" H 6315 6096 50  0000 L CNN
+F 1 "100uF" H 6315 6005 50  0000 L CNN
+F 2 "Capacitor_SMD:C_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 6200 6050 50  0001 C CNN
+F 3 "~" H 6200 6050 50  0001 C CNN
+	1    6200 6050
+	1    0    0    -1  
+$EndComp
+Text Notes 3600 4000 0    50   ~ 0
+NOTE: The symbol loibrary for the Teensy can be\nfound at: https://github.com/XenGi/teensy_library
 $EndSCHEMATC

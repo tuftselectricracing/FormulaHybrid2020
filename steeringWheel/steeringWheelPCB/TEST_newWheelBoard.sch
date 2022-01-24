@@ -1,5 +1,4 @@
 EESchema Schematic File Version 4
-LIBS:TEST_newWheelBoard-cache
 EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
@@ -1422,4 +1421,6 @@ F 3 "~" H 6200 6050 50  0001 C CNN
 	1    6200 6050
 	1    0    0    -1  
 $EndComp
+Text Notes 3600 4000 0    50   ~ 0
+NOTE: The symbol loibrary for the Teensy can be\nfound at: https://github.com/XenGi/teensy_library
 $EndSCHEMATC
